@@ -36,7 +36,15 @@
                                 </h3>
                         </div>
                         <hr>
-                        <p class="lead pull-left">{{ content }}</p>
+                        <p class="lead pull-left">
+                                <ul>
+                                    {% for post in site.posts limit 4 %}
+                                    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+                                        {{ post.content | strip_html | truncatewords:75}}<br>
+                                            <a href="{{ post.url }}">Leia mais...</a><br><br>
+                                    {% endfor %}
+                                </ul>
+                        </p>
                         <hr>
                         <div class="footer">
                                 <p>Página criada utilizando <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a> e <a href="https://github.com/mojombo/jekyll">Jekyll</a>, hospedada no <a href="http://pages.github.com/">GitHub Pages</a>. Todo o projeto disponivel no <a href="https://github.com/tqchagas/tqchagas.github.com">GitHub</a> sobe licença  <a href="http://creativecommons.org/licenses/by/3.0/br/">Creative Commons</a>.</p>
