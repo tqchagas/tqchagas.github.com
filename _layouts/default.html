@@ -1,19 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Thiago Chagas - Blog</title>
-    <link rel="stylesheet" media="screen" href="/assets/css/master.css"/>
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/imagens/favicon.ico">
-  </head>
-  <body>
-    <div id="container"> 
-      <header class="group">
-        <h1 class="logo"><a href="/">Thiago Chagas - Blog</a></h1>
-      </header>
-      <div id="content">
-        {{ content }}
-      </div>
-    </div>
-  </body>
+<html lang="pt-br">
+        <head>
+                <meta charset="utf-8">
+                <title>Thiago Chagas</title>
+                <meta name="keywords" content="Thiago Chagas, Blog back-end">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="">
+                <meta name="author" content="">
+                <!-- CSS Styles -->
+                <link href="assets/css/bootstrap.css" rel="stylesheet">
+                <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+                <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+                <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+                <![endif]-->
+                {% include analytics-head.html %}
+
+        </head>
+        <body>
+                <div class="container-narrow">
+                        <div class="masthead">
+                                <ul class="nav nav-pills pull-right">
+                                        <li>
+                                                <a href="index.html">Inicio</a>
+                                        </li>
+                                        <li>
+                                                <a href="/blog">Blog</a>
+                                        </li>
+                                        <li>
+                                                <a href="/contato">Contato</a>
+                                        </li>
+                                </ul>
+                                <h3 class="muted">
+                                        <a class="muted" href="http://thiagochagas.com">Thiago Chagas</a>
+                                </h3>
+                        </div>
+                        <hr>
+                        <div class="jumbotron">
+                                <h1>Posts</h1>
+                                <p class="lead">{{ content }}</p>
+                        </div>
+                        <hr>
+                        <div class="footer">
+                                <p>Página criada utilizando <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a> e <a href="https://github.com/mojombo/jekyll">Jekyll</a>, hospedada no <a href="http://pages.github.com/">GitHub Pages</a>. Todo o projeto disponivel no <a href="https://github.com/tqchagas/tqchagas.github.com">GitHub</a> sobe licença  <a href="http://creativecommons.org/licenses/by/3.0/br/">Creative Commons</a>.</p>
+                        </div>
+                </div>
+                {% include analytics-body.html %}
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+                <script src="assets/js/bootstrap.min.js"></script>
+        </body>
 </html>
