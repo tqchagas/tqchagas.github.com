@@ -1,5 +1,5 @@
 # Thiago Chagas - Blog
 
-## Description
+## Descrição
 
 Blog onde será postado tutoriais, dicas e afins.
