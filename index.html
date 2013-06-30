@@ -14,15 +14,18 @@
                 <!--[if lt IE 9]>
                 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
                 <![endif]-->
-                {% include analytics-head.html %}
-
+                <script type="text/javascript">
+                        var _gaq = _gaq || [];
+                        _gaq.push(['_setAccount', 'UA-42108750-1']);
+                        _gaq.push(['_trackPageview']);
+                </script>
         </head>
         <body>
                 <div class="container-narrow">
                         <div class="masthead">
                                 <ul class="nav nav-pills pull-right">
                                         <li>
-                                                <a href="index.html">Inicio</a>
+                                                <a href="">Inicio</a>
                                         </li>
                                         <li>
                                                 <a href="/blog">Blog</a>
@@ -45,7 +48,13 @@
                                 <p>Página criada utilizando <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a> e <a href="https://github.com/mojombo/jekyll">Jekyll</a>, hospedada no <a href="http://pages.github.com/">GitHub Pages</a>. Todo o projeto disponivel no <a href="https://github.com/tqchagas/tqchagas.github.com">GitHub</a> sobe licença  <a href="http://creativecommons.org/licenses/by/3.0/br/">Creative Commons</a>.</p>
                         </div>
                 </div>
-                {% include analytics-body.html %}
+                <script type="text/javascript">
+                        (function() {
+                                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                        })();
+                </script>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
                 <script src="assets/js/bootstrap.min.js"></script>
         </body>

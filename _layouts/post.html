@@ -22,7 +22,7 @@
                         <div class="masthead">
                                 <ul class="nav nav-pills pull-right">
                                         <li>
-                                                <a href="index.html">Inicio</a>
+                                                <a href="http://thiagochagas.com">Inicio</a>
                                         </li>
                                         <li>
                                                 <a href="/blog">Blog</a>
@@ -37,9 +37,10 @@
                         </div>
                         <hr>
                         <div class="jumbotron">
-                                <h1>Posts</h1>
-                                <p class="lead">{{ content }}</p>
+                          <p class="lead">{{ page.title }}</p>
+                          <p>{{ page.date | date:"%d/%m/%Y" }}</p>
                         </div>
+                        <p class="lead pull-left">{{ page.content }}</p>
                         {% include disqus.html %}
                         <hr>
                         <div class="footer">
