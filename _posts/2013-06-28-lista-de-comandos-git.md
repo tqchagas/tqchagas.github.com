@@ -6,7 +6,7 @@ title: Lista de comandos GIT
 ##Lista de comandos GIT
 
 Configurações básicas e globais
-<pre class="prettyprint">
+
 $ git config --global user.name "[seu nome]"
 $ git config --global user.email [seu e-mail]
 $ git config --global apply.whitespace nowarn
@@ -14,38 +14,38 @@ $ git config --global core.whitespace nowarn
 $ git config --global color.branch auto
 $ git config --global color.diff auto
 $ git config --global color.status auto
-</pre>
+
 
 #Alias
 Com o alias, você pode criar apelidos aos comando fo GIT, para criar uma alias digite:
-<pre class="prettyprint">
+
 $ git config --global alias.st status
 $ git config --global alias.co checkout
-</pre>
+
 Para usar o comando, digite por exemplo:
-<pre class="prettyprint">
+
 $ git st
 $ git co
-</pre>
+
 
 #Criar repositório
-<pre class="prettyprint">
+
 $ mkdir [pasta]
 $ cd pasta
 $ git init
-</pre>
+
 
 #Criando e aplicando vários patch de um branch
-<pre class="prettyprint">
+
 $ git checkout [branch]
 $ git format-patch --stdout master > patch
 $ git am --whitespace=nowarn patch
 #Adicionar arquivo(s) ao próximo commit
-<pre class="prettyprint">
+
 $ git add [arquivo1] [arquivo2] ...
 ou para adicionar todos aquivos digite:
 
-<pre class="prettyprint">$ git add .</pre>
+$ git add .
 # Fazer um commit com as mudanças
 $ git commit -m "[mensagem]"
 # Criar um Branch
