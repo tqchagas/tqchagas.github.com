@@ -1,12 +1,16 @@
 ---
 layout: default
-title: Blog - Thiago Chagas
+title: Thiago Chagas - Blog
 ---
 
-<section id="main" class="group">
-  <h2>Posts</h2>
-    {% for post in site.posts %}
-    	<span class="post-date">{{ post.date | date:"%d/%m/%Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a><br/
-    {% endfor %}
-  </ul>
-</section>
+{% for post in site.posts %}
+<hr>
+<li>
+	<!--<h2>{{ post.date | date: "%d/%m/%Y" }} - <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>-->
+	<h2 class="text-center"><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
+	{{ post.content | split:'<!-- break -->' | first }}
+	{% if post.content contains '<!-- break -->' %}
+		<p><a href="{{ post.url }}">Leia mais...</a></p>
+	{% endif %}
+</li>
+{% endfor %}
