@@ -3,10 +3,18 @@
         <head>
                 <meta charset="utf-8">
                 <title>{{page.title}} - Thiago Chagas</title>
-                <meta name="keywords" content="Thiago Chagas, Blog back-end">
+                {% if page.categories %}
+                <meta name="keywords" content="{{page.categories | join: ','}}" />
+                {% else %}
+                <meta name="keywords" content="{{site.tags | join: ','}}" />
+                {% endif %}
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <meta name="description" content="">
-                <meta name="author" content="">
+                {% if page.description %}
+                <meta name="description" content="{{page.description}}" />
+                {% else %}
+                <meta name="description" content="{{site.description}}" />
+                {% endif %}
+                <a href="https://plus.google.com/101951962953045730988?rel=author"></a>
                 <!-- CSS Styles -->
                 <link href="http://thiagochagas.com/assets/css/bootstrap.css" rel="stylesheet">
                 <link href="http://thiagochagas.com/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -37,7 +45,7 @@
                         </div>
                         <hr>
                         <h1>{{ page.title }}</h1>
-                        <p>{{ content }}</p>
+                        {{ content }}
                         <a href="http://thiagochagas.com/blog/">Retornar</a>
                         <hr>
                         {% include disqus.html %}
