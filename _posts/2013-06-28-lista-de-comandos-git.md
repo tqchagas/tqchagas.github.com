@@ -1,9 +1,11 @@
 ---
 layout: post
 title: Lista de comandos GIT
+author: Thiago Chagas
 ---
 
 ####Configurações básicas e globais
+<h5>{{ post.date | date: "%d/%m/%Y" }} by {{ page.author }}</h5>
 <pre><code>$ git config --global user.name "[seu nome]"
 $ git config --global user.email [seu e-mail]
 $ git config --global apply.whitespace nowarn
