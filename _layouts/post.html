@@ -3,6 +3,7 @@
         <head>
                 <meta charset="utf-8">
                 <title>{{page.title}} - Thiago Chagas</title>
+                {% include perfil_plus.html %}
                 {% if page.categories %}
                 <meta name="keywords" content="{{page.categories | join: ','}}" />
                 {% else %}
@@ -14,7 +15,6 @@
                 {% else %}
                 <meta name="description" content="{{site.description}}" />
                 {% endif %}
-                <a href="https://plus.google.com/101951962953045730988?rel=author"></a>
                 <!-- CSS Styles -->
                 <link href="http://thiagochagas.com/assets/css/bootstrap.css" rel="stylesheet">
                 <link href="http://thiagochagas.com/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
