@@ -7,7 +7,7 @@ description: "Guia de como criar um CRUD usando o Bake do CakePHP"
 ---
 ### Introdução
 
-Baixe a última versão estável do [CakePHP[](http://cakephp.org/) - Atualmente 2.3.9
+Baixe a última versão estável do [CakePHP](http://cakephp.org/) 
 
 Neste tutorial iremos usar o SGBD Mysql, certifique de ter ele instalado.
 
@@ -26,6 +26,8 @@ Em /seu_projeto/app/app/Config/ crie um arquivo chamado database.php, com o segu
 		'encoding' => 'utf8',
 	);
 }</code></pre>
+
+<!-- break -->
 
 No Mysql, crie um DB e utilize o seguinte código para criar a tabela:
 <pre><code>CREATE TABLE posts (
