@@ -12,6 +12,7 @@
     font-weight: 400; font-style: normal; font-display: swap;
   }
   :root { --bg:#0a0a0a; --fg:#fafafa; --muted:#a3a3a3; --accent:#4ade80; --line:#1c1c1c; --border:#262626; }
+  :root.light { --bg:#fafafa; --fg:#0a0a0a; --muted:#525252; --accent:#16a34a; --line:#e5e5e5; --border:#d4d4d4; }
   * { box-sizing: border-box; }
   html, body { margin:0; padding:0; font-synthesis:none; }
   body { background:var(--bg); color:var(--fg); font-family:'Departure Mono', ui-monospace, monospace; }
@@ -20,7 +21,7 @@
   .wrap { max-width:880px; margin:0 auto; padding:0 28px 120px; display:flex; flex-direction:column; }
   header { display:flex; align-items:center; justify-content:space-between; padding:28px 0; }
   .brand { font-size:14px; color:var(--accent); }
-  .lang { font-size:13px; color:#7a7a7a; background:none; border:1px solid var(--border); border-radius:999px; padding:6px 14px; transition:.15s; }
+  .lang { font-size:13px; color:var(--muted); background:none; border:1px solid var(--border); border-radius:999px; padding:6px 14px; transition:.15s; }
   .lang:hover { color:var(--fg); border-color:var(--accent); }
   main { display:flex; flex-direction:column; gap:72px; padding-top:64px; }
   section { display:flex; flex-direction:column; gap:16px; }
@@ -34,7 +35,7 @@
   h2 { margin:0; font-size:13px; font-weight:400; color:var(--accent); }
   .note { margin:0; font-size:16px; color:var(--muted); max-width:560px; }
   .chips { display:flex; flex-wrap:wrap; gap:8px; padding-top:4px; }
-  .chip { font-size:13px; color:#d4d4d4; border:1px solid var(--border); border-radius:4px; padding:6px 12px; }
+  .chip { font-size:13px; color:var(--muted); border:1px solid var(--border); border-radius:4px; padding:6px 12px; }
   .projects { gap:0; }
   .proj { display:grid; grid-template-columns:180px 1fr auto; gap:24px; align-items:baseline; padding:20px 0; border-top:1px solid var(--line); }
   .proj .name { font-size:15px; color:var(--fg); }
@@ -57,7 +58,10 @@
   <div class="wrap">
     <header>
       <span class="brand">thiago.dev</span>
-      <button class="lang" id="lang"></button>
+      <div style="display:flex;gap:8px">
+        <button class="lang" id="theme" style="width:42px;text-align:center">☾</button>
+        <button class="lang" id="lang"></button>
+      </div>
     </header>
     <main>
       <section class="hero">
@@ -145,6 +149,16 @@
     lang = lang === 'pt' ? 'en' : 'pt';
     localStorage.setItem('td-lang', lang);
     render();
+  });
+  const themeBtn = document.getElementById('theme');
+  let theme = localStorage.getItem('td-theme') || 'dark';
+  if (theme === 'light') document.documentElement.classList.add('light');
+  themeBtn.textContent = theme === 'light' ? '☀' : '☾';
+  themeBtn.addEventListener('click', () => {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('light');
+    themeBtn.textContent = theme === 'light' ? '☀' : '☾';
+    localStorage.setItem('td-theme', theme);
   });
   render();
 </script>
